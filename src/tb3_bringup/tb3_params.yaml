@@ -1,5 +1,5 @@
 tb3_robot:
   ros__parameters:
-    linear_velocity_limit: 0.22
+    linear_velocity_limit: 0.30
     angular_velocity_limit: 2.84
     use_sim_time: true
