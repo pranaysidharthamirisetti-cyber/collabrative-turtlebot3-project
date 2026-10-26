@@ -3,4 +3,8 @@ tb3_robot:
     linear_velocity_limit: 0.40
     angular_velocity_limit: 2.84
     use_sim_time: true
-    max_accel: 3.0
+<<<<<<< HEAD
+    max_accel: 2.0
+=======
+    max_accel: 1.5
+>>>>>>> origin/main
