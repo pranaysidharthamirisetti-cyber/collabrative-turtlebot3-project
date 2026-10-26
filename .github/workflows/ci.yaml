@@ -1,0 +1,26 @@
+name: Cobot Project CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    container:
+      image: ros:humble-ros-base
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Prepare workspace
+        run: |
+          mkdir -p /ws/src
+          cp -r $GITHUB_WORKSPACE /ws/src/cobot_project
+      - name: Build package with colcon
+        shell: bash
+        run: |
+          source /opt/ros/humble/setup.bash
+          cd /ws
+          colcon build
